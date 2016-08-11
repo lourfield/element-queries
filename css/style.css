@@ -113,6 +113,7 @@ mark {
   display: flex;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   font-family: 'Open Sans', sans-serif;
+  transition: transform .38s, opacity .2s;
 }
 .user-profile__avatar {
   width: 25%;
@@ -164,6 +165,17 @@ mark {
   transform: scale(1.1);
   background: #df1d50;
 }
+.user-profile__button.is-hidden {
+  display: none;
+}
+.user-profile.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.user-profile.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 @element ".user-profile" and ( max-width: 540px ) {
   .user-profile__avatar {
     max-width: 90px;
@@ -202,4 +214,28 @@ mark {
   .user-profile__summary {
     padding-left: 0;
   }
+}
+/**
+ * Extras
+ */
+#hover-me {
+  cursor: pointer;
+  border: 0;
+  background-color: #E3295A;
+  font-size: 12px;
+  padding: 18px 30px;
+  color: #fff;
+  border-radius: 30px;
+  transition: transform .3s;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  width: 180px;
+  text-align: center;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
+#hover-me:hover {
+  background: #df1d50;
 }
